@@ -1,5 +1,7 @@
 import requests
-import selenium
+from selenium.webdriver.chrome.service import Service
+from selenium import webdriver
+
 
 # Base URL - in future, import from the TOML file
 
@@ -16,3 +18,6 @@ latest_data  = None
 
 page = requests.get(url_base, headers=request_header)
 print(page.text)
+
+service = Service() # Ensure that chromedriver is on your path, if using Chrome
+driver = webdriver.Chrome(service=service) # currently Chrome is the only supported browser and is hard-coded
