@@ -1,4 +1,5 @@
 import requests
+import selenium
 
 # Base URL - in future, import from the TOML file
 
